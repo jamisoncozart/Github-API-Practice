@@ -37,7 +37,11 @@
 $(document).ready(function() {
   const Url = "https://api.github.com/users/jamisoncozart/repos";
   $.get(Url, function(data, status) {
-    console.log(data);
+    var repos = data;
+    console.log(repos[0].stargazers_count);
+    repos = repos.sort((a,b) => parseFloat(b.stargazers_count) - parseFloat(a.stargazers_count));
+    console.log(repos[0].stargazers_count);
+    console.log(repos);
   })
 })
 
