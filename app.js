@@ -42,6 +42,9 @@ $(document).ready(function() {
     repos = repos.sort((a,b) => parseFloat(b.stargazers_count) - parseFloat(a.stargazers_count));
     console.log(repos[0].stargazers_count);
     console.log(repos);
+    document.getElementById("title").innerHTML = repos[0].name;
+    document.getElementById("stars").innerHTML = repos[0].stargazers_count;
+    document.getElementById("description").innerHTML = repos[0].description;
   })
 })
 
